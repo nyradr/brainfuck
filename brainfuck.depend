@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1449429092 source:/home/voyez/Documents/cpp/brainfuck/main.c
+	<stdio.h>
+	<stdlib.h>
+	<argp.h>
+	<error.h>
+	"vm.h"
+
+1449417362 source:/home/voyez/Documents/cpp/brainfuck/memory.c
+	"memory.h"
+	<stdlib.h>
+	<stdio.h>
+
+1449426042 /home/voyez/Documents/cpp/brainfuck/memory.h
+
+1449426817 source:/home/voyez/Documents/cpp/brainfuck/vm.c
+	"vm.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1449429019 /home/voyez/Documents/cpp/brainfuck/vm.h
+	"memory.h"
+	<stdio.h>
+
+1449338693 /home/voyez/Documents/cpp/brainfuck/bfutils.h
+
+1449338916 source:/home/voyez/Documents/cpp/brainfuck/bfutils.c
+	"bfutils.h"
+	<string.h>
+
