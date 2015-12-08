@@ -5,20 +5,21 @@
 #include <string.h>
 
 void	bf_error(Bfvm *vm, int err){
-    printf("Error\n");
+    if(vm->verbose || vm->debug)
+	printf("Error\n");
 
     if(vm->debug)
-        printf("\tInstruction %d\n\tMemory %d(%d)\n", mem_getpos(vm->prg), mem_getpos(vm->mem), mem_get(vm->mem));
+        printf("\tInstruction %c\n\tMemory %d(%d)\n", mem_getpos(vm->prg), mem_getpos(vm->mem), mem_get(vm->mem));
 }
 
 
 void	bf_moveleft(Bfvm* vm){
-    if(mem_decr(vm->mem) == 0)
-    	bf_error(vm, BF_ERR_MACCES);
+	if(!mem_decr(vm->mem))
+		bf_error(vm, BF_ERR_MACCES);
 }
 
 void	bf_moveright(Bfvm* vm){
-	if(mem_incr(vm->mem) == 0)
+	if(!mem_incr(vm->mem))
 		bf_error(vm, BF_ERR_MACCES);
 }
 
@@ -143,7 +144,7 @@ void	bfvm_loadFile(Bfvm* vm, FILE* file){
 		int size = 0;
 
 		fseek(file, 0, SEEK_END);
-        size = ftell(file);
+        	size = ftell(file);
 		fseek(file, 0, SEEK_SET);
 
 		vm->prg = mem_create(size);
