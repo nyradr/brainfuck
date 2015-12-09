@@ -43,17 +43,19 @@ void	mem_set(Mem* mem, char v){
 }
 
 int		mem_incr(Mem* mem){
-    if(mem->ptr < mem->end)
+	int incp = 0;
+    if((incp = mem->ptr < mem->end))
     	mem->ptr++;
 
-	return mem->ptr < mem->end;
+	return incp;
 }
 
 int		mem_decr(Mem* mem){
-	if(mem->ptr > mem->deb)
+	int decp = 0;
+	if((decp = mem->ptr > mem->deb))
 		mem->ptr--;
 
-	return mem->ptr < mem->deb;
+	return decp;
 }
 
 void	mem_deb(Mem* mem){
